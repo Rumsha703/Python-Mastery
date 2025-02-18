@@ -14,7 +14,7 @@ def speak(text):
 
 
 def aiProcess(command):
-    client = OpenAI(api_key="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",
+    client = OpenAI(api_key= "<Your Key Here>",
     )
 
     completion = client.chat.completions.create(
