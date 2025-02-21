@@ -3,6 +3,9 @@ import webbrowser
 import pyttsx3
 import musiclibrary
 from openai import OpenAI
+import os
+from dotenv import load_dotenv
+load_dotenv()
 
 recognizer = sr.Recognizer()
 
@@ -15,9 +18,10 @@ def speak(text):
 
 def aiProcess(command):
 
-    client = OpenAI(
-  api_key="<Your Key Here>",
-)
+    client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
+
+    #client = OpenAI(
+  #api_key="<Your Key Here>",)
     
 
     completion = client.chat.completions.create(
